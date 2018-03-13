@@ -1,6 +1,6 @@
-# SB Admin v2.0 rewritten in Laravel 5.5
+# A fork from SB Admin v2.0 rewritten in Laravel 5.5
 
-This project is a part of the famous Free Admin Bootstrap Theme SB Admin v2.0 to Laravel Theme.
+This project is a fork from the famous Free Admin Bootstrap Theme SB Admin v2.0 to Laravel Theme. Reutilized as a school project.
 
 Find out more [Free Laravel Themes at StartLaravel.com](http://www.startlaravel.com/)..
 
@@ -16,4 +16,7 @@ Find out more [Free Laravel Themes at StartLaravel.com](http://www.startlaravel.
 - `bower install`
 - `npm run watch`
 - `php artisan cache:clear`
-- `php artisan serve` & open `http://localhost:8000` in your browser
+- `cp .env.example .env`
+- `php artisan key:generate`
+- `chmod -R 777 storage/`
+- `php artisan serve` & open [<http://localhost:8000]> in your browser
