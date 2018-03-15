@@ -1,4 +1,4 @@
-@extends ('layouts.dashboard')
+@extends('layouts.dashboard')
 @section('page_heading','Preguntas')
 @section('section')
 <div class="col-sm-12">	
