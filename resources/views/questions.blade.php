@@ -1,4 +1,9 @@
 @extends('layouts.dashboard')
+@section('title')
+    @include('layouts.site_title', ['title' => 'Preguntas - [BD1]_P1'])
+@stop
+
+@section('nav-brand','[BD1]_P1 - Preguntas')
 @section('page_heading','Preguntas')
 @section('section')
 <div class="col-sm-12">	
