@@ -15,6 +15,8 @@ class CreateActionTypesTable extends Migration
     {
         Schema::create('action_types', function (Blueprint $table) {
             $table->increments('id');
+            $table->string('name',100)->unique();
+            $table->string('description',350);
             $table->timestamps();
         });
     }
@@ -26,6 +28,7 @@ class CreateActionTypesTable extends Migration
      */
     public function down()
     {
+        Schema::dropIfExists('log_books');
         Schema::dropIfExists('action_types');
     }
 }

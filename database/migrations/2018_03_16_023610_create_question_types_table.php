@@ -15,8 +15,8 @@ class CreateQuestionTypesTable extends Migration
     {
         Schema::create('question_types', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('name',80);
-            $table->string('description',250);
+            $table->string('name',100)->unique();
+            $table->string('description',350);
             $table->timestamps();
         });
     }
@@ -27,7 +27,7 @@ class CreateQuestionTypesTable extends Migration
      * @return void
      */
     public function down()
-    {
+    {   
         Schema::dropIfExists('question_types');
     }
 }

@@ -15,7 +15,12 @@ class CreateFormFlowsTable extends Migration
     {
         Schema::create('form_flows', function (Blueprint $table) {
             $table->increments('id');
+            $table->integer('order');
+            $table->unsignedInteger('current_form');
+            $table->unsignedInteger('next_form');
             $table->timestamps();
+            $table->foreign('current_form')->references('id')->on('forms');
+            $table->foreign('next_form')->references('id')->on('forms');
         });
     }
 
