@@ -20,6 +20,8 @@ Route::resource('question_types','QuestionTypeController');
 
 Route::resource('questions','QuestionController');
 
+Route::resource('answers','AnswerController');
+
 Route::get('/charts', function()
 {
 	return view('mcharts');

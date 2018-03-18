@@ -79,12 +79,12 @@ class QuestionTypeController extends Controller
     {
         $this->validate($request, [
             'name' => 'required',
-         ]);
-         $question_type = question_type::find($id);
-         $question_type->name = $request->input('name');
-         $question_type->description = $request->input('description');
-         $question_type->save();
-         return redirect('question_types')->with('success', 'Actualizado exitosamente');
+        ]);
+        $question_type = question_type::find($id);
+        $question_type->name = $request->input('name');
+        $question_type->description = $request->input('description');
+        $question_type->save();
+        return redirect('question_types')->with('success', 'Actualizado exitosamente');
     }
 
     /**
