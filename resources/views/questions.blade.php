@@ -3,40 +3,22 @@
     @include('layouts.site_title', ['title' => 'Preguntas - [BD1]_P1'])
 @stop
 
-@section('nav-brand','[BD1]_P1 - Preguntas')
-@section('page_heading','Preguntas')
+@section('nav-brand','[BD1]_P1 - Pregunta')
+@section('page_heading','Pregunta')
 @section('section')
-<div class="col-sm-12">	
-	<div class="row">
-		<div class="col-sm-6">
-			@section ('cchart1_panel_title','Line Chart')
-			@section ('cchart1_panel_body')
-			@include('widgets.charts.clinechart')
-			@endsection
-			@include('widgets.panel', array('header'=>true, 'as'=>'cchart1'))
-
-			@section ('cchart3_panel_title','Donut Chart')
-			@section ('cchart3_panel_body')
-				<div style="max-width:400px; margin:0 auto;">@include('widgets.charts.cdonutchart')</div>
-			@endsection
-			@include('widgets.panel', array('header'=>true, 'as'=>'cchart3'))
-		</div>
-		<div class="col-sm-6">
-			
-			@section ('cchart2_panel_title','Pie Chart')
-			@section ('cchart2_panel_body')
-				<div style="max-width:400px; margin:0 auto;">@include('widgets.charts.cpiechart')</div>
-			@endsection
-			@include('widgets.panel', array('header'=>true, 'as'=>'cchart2'))
-
-			@section ('cchart4_panel_title','Bar Chart')
-			@section ('cchart4_panel_body')
-			@include('widgets.charts.cbarchart')
-			@endsection
-			@include('widgets.panel', array('header'=>true, 'as'=>'cchart4'))
-		</div> 
-	</div>
-	
-	
+<div class="col-sm-12">
+	@if(count($questions) > 1 )
+		@foreach($questions as $question)
+			<div class="row">
+				@section ('question_' . $question->id . '_panel_title', $question->name)
+				@section ('question_' . $question->id . '_panel_body')
+				{{{$question->description}}}
+				@endsection
+				@include('widgets.question-panel', array('class'=>'info', 'header'=> true, 'as'=>'question_' . $question->id, 'id'=>$question->id))
+			</div>
+		@endforeach
+	@else
+		@include('widgets.alert', array('class'=>'danger', 'message'=> 'No se encontraron valores', 'icon'=> 'remove'))
+	@endif
 </div>
 @stop

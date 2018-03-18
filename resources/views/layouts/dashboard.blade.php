@@ -334,6 +334,7 @@
         </nav>
 
         <div id="page-wrapper">
+            @include('widgets.messages')
 			 <div class="row">
                 <div class="col-lg-12">
                     <h1 class="page-header">@yield('page_heading')</h1>

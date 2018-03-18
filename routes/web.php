@@ -21,6 +21,8 @@ Route::get('/questions', function()
 	return view('questions');
 });
 
+Route::resource('question_types','QuestionTypeController');
+
 Route::get('/charts', function()
 {
 	return view('mcharts');
