@@ -7,10 +7,10 @@
 @section('page_heading','Pregunta')
 @section('section')
 <div class="col-sm-12">
-	@if(count($questions) > 1 )
+	@if(count($questions) > 0 )
 		@foreach($questions as $question)
 			<div class="row">
-				@section ('question_' . $question->id . '_panel_title', $question->name)
+				@section ('question_' . $question->id . '_panel_title', $question->name . ' -> ' . $question->questionType->name  )
 				@section ('question_' . $question->id . '_panel_body')
 				{{{$question->description}}}
 				@endsection

@@ -281,6 +281,23 @@
                             </ul>
                             <!-- /.nav-second-level -->
                         </li>
+
+                        <li >
+                            <a href="#"><i class="fa fa-wrench fa-fw"></i> Rutas <span class="fa arrow"></span></a>
+                            <ul class="nav nav-second-level">
+                                <li {{ (Request::is('*question_types') ? 'class="active"' : '') }}>
+                                    <a href="{{ url ('question_types') }}">Tipos de pregunta</a>
+                                </li>
+                                <li {{ (Request::is('*questions') ? 'class="active"' : '') }}>
+                                    <a href="{{ url ('questions' ) }}">Preguntas</a>
+                                </li>
+                                <li {{ (Request::is('*answers') ? 'class="active"' : '') }}>
+                                    <a href="{{ url('answers') }}">Respuestas</a>
+                                </li>
+                            </ul>
+                            <!-- /.nav-second-level -->
+                        </li>
+
                         <li>
                             <a href="#"><i class="fa fa-sitemap fa-fw"></i> Multi-Level Dropdown<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">

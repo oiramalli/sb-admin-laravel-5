@@ -16,12 +16,9 @@ Route::get('/', function()
 	return view('home');
 });
 
-Route::get('/questions', function()
-{
-	return view('questions');
-});
-
 Route::resource('question_types','QuestionTypeController');
+
+Route::resource('questions','QuestionController');
 
 Route::get('/charts', function()
 {
