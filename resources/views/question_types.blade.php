@@ -7,7 +7,7 @@
 @section('page_heading','Tipos de pregunta')
 @section('section')
 <div class="col-sm-12">
-	@if(count($question_types) > 1 )
+	@if(count($question_types) > 0 )
 		@foreach($question_types as $question_type)
 			<div class="row">
 				@section ('question_' . $question_type->id . '_panel_title', $question_type->name)

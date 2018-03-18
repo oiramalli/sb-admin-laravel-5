@@ -96,7 +96,11 @@ class QuestionTypeController extends Controller
     public function destroy($id)
     {
         $question_type = question_type::find($id);
-        $question_type->delete();
-        return redirect('question_types')->with('success', 'Eliminado exitosamente');
+        try{
+            $question_type->delete();
+            return redirect('question_types')->with('success', 'Eliminado exitosamente');
+        }catch(\Exception $e){
+            return redirect('question_types')->with('error', $e->getMessage());
+        }
     }
 }
